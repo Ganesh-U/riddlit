@@ -19,9 +19,10 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware - CORS
+// Allow all origins since frontend and backend are on same domain
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:3000",
+    origin: true,
     credentials: true,
   })
 );
