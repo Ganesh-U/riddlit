@@ -33,7 +33,14 @@ export function setupUserRoutes(db) {
       // Set session
       req.session.username = username;
 
-      res.json({ success: true, username });
+      // Save session explicitly before sending response
+      req.session.save((err) => {
+        if (err) {
+          console.error("Session save error:", err);
+          return res.status(500).json({ error: "Registration failed" });
+        }
+        res.json({ success: true, username });
+      });
     } catch (error) {
       console.error("Register error:", error);
       res.status(500).json({ error: "Registration failed" });
@@ -56,7 +63,14 @@ export function setupUserRoutes(db) {
 
       req.session.username = username;
 
-      res.json({ success: true, username });
+      // Save session explicitly before sending response
+      req.session.save((err) => {
+        if (err) {
+          console.error("Session save error:", err);
+          return res.status(500).json({ error: "Login failed" });
+        }
+        res.json({ success: true, username });
+      });
     } catch (error) {
       console.error("Login error:", error);
       res.status(500).json({ error: "Login failed" });
@@ -65,8 +79,13 @@ export function setupUserRoutes(db) {
 
   // Logout
   router.post("/logout", (req, res) => {
-    req.session.destroy();
-    res.json({ success: true });
+    req.session.destroy((err) => {
+      if (err) {
+        console.error("Logout error:", err);
+        return res.status(500).json({ error: "Logout failed" });
+      }
+      res.json({ success: true });
+    });
   });
 
   // Get session
