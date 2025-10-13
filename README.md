@@ -8,34 +8,69 @@ This project demonstrates full-stack web development skills through a complete C
 
 ## Screenshots
 
-### Browse Puzzles - Main Feed
+### Landing page
 
-![Browse Puzzles](screenshots/browse_puzzles.png)
-_Filter puzzles by category and difficulty with real-time search_
+![Landing page](public/images/Index.png)
+_Landing page_
 
-### Puzzle Detail - Solve Interface
+### Register page
 
-![Puzzle Solving](screenshots/puzzle_detail.png)
-_Submit answers with instant feedback and community voting_
+![Register page](public/images/Register.png)
+_User Registration page_
 
-### Create Puzzle
+### Login page
 
-![Create Puzzle](screenshots/create_puzzle.png)
-_Intuitive form for puzzle creation with category and difficulty selection_
+![Login page](public/images/Login.png)
+_User Login page_
+
+### Puzzle feed
+
+![Puzzle feed](public/images/Logged_In.png)
+_Puzzle feed after logging in_
+
+### Filtering puzzles
+
+![Filter puzzles](screenshots/Filter_puzzles.png)
+_Filter puzzles by category and/or difficulty_
+
+### Solving puzzle correctly
+
+![Solve puzzle](public/images/Solve_puzzle.png)
+_Solve a puzzle correctly_
+
+### Incorrect attempt
+
+![Incorrect attempt](public/images/Incorrect.png)
+_Attempt to solve a puzzle incorrectly_
+
+### Comments
+
+![Add comment](public/images/Comments.png)
+_Add Comments for a puzzle_
+
+### Create puzzle
+
+![Create puzzle](public/images/Create_puzzle.png)
+_Create a puzzle_
+
+### My Puzzles
+
+![My puzzles](public/images/My_puzzles.png)
+_View the puzzles I created_
+
+### My Stats
+
+![My stats](public/images/My_stats.png)
+_View my stats so far_
 
 ### Leaderboard
 
-![Leaderboard](screenshots/leaderboard.png)
+![Leaderboard](public/images/Leaderboard.png)
 _Community rankings showing top solvers and puzzle creators_
-
-### My Puzzles Dashboard
-
-![My Puzzles](screenshots/my_puzzles.png)
-_Manage your created puzzles with statistics and edit capabilities_
 
 ### Dark Mode
 
-![Dark Mode](screenshots/dark_mode.png)
+![Dark Mode](public/images/Dark_theme.png)
 _Toggle between light and dark themes for comfortable viewing_
 
 ## Technology Requirements
@@ -123,8 +158,8 @@ npm run seed
 
 ```
 riddlit/
-├── public/                      # Frontend files
-│   ├── css/                    # Stylesheets
+├── public/                    # Frontend files
+│   ├── css/                   # Stylesheets
 │   │   ├── auth.css           # Login/register styling
 │   │   ├── base.css           # Base styles and variables
 │   │   ├── components.css     # Reusable UI components
@@ -137,17 +172,17 @@ riddlit/
 │   │   ├── api/
 │   │   │   └── client.js      # API communication layer
 │   │   ├── components/
-│   │   │   └── puzzleCard.js  # Reusable puzzle card
+│   │   │   ├── puzzleCard.js  # Reusable puzzle card
+│   │   │   └── toast.js       # Notifications
 │   │   ├── pages/
 │   │   │   ├── index.js       # Browse puzzles logic
 │   │   │   ├── leaderboard.js # Rankings display
 │   │   │   ├── my-puzzles.js  # Puzzle management
 │   │   │   └── my-stats.js    # User statistics
-│   │   └── utils/
-│   │       ├── auth.js        # Authentication handling
-│   │       ├── darkMode.js    # Theme switching
-│   │       ├── helpers.js     # Utility functions
-│   │       └── toasts.js      # Notifications
+│   │   ├── utils/
+│   │   │   ├── darkMode.js    # Theme switching
+│   │   │   └── helpers.js     # Utility functions
+│   │   └── auth.js            # Authentication handling
 │   ├── favicon.svg            # Site icon
 │   ├── index.html             # Browse puzzles page
 │   ├── leaderboard.html       # Community rankings
@@ -155,7 +190,7 @@ riddlit/
 │   ├── my-puzzles.html        # Puzzle creator dashboard
 │   ├── my-stats.html          # User statistics
 │   └── register.html          # User registration
-├── src/                        # Backend files
+├── src/                       # Backend files
 │   ├── db/
 │   │   └── connection.js      # MongoDB connection
 │   ├── middleware/
@@ -169,7 +204,7 @@ riddlit/
 │   └── server.js              # Express server setup
 ├── scripts/
 │   └── seed-data.js           # Database seeding script
-├── .env.example               # Environment variables template
+├── .env                       # Environment variables template
 ├── .gitignore                 # Git ignore rules
 ├── .prettierrc.json           # Prettier configuration
 ├── eslint.config.js           # ESLint configuration
@@ -177,56 +212,6 @@ riddlit/
 ├── Riddlit_Design_Document.pdf # Design documentation
 └── README.md                  # This file
 ```
-
-## Key Features
-
-### User Authentication
-
-- **Registration System:** Secure account creation with username/password
-- **Session Management:** Express-session for persistent login state
-- **Protected Routes:** Middleware-based authentication for secure endpoints
-- **Profile Management:** View personal statistics and puzzle history
-
-### Puzzle Management (Ganesh)
-
-- **Create Puzzles:** Form with question, answer, hint, category, and difficulty
-- **Edit/Delete:** Full ownership controls for puzzle creators
-- **Categories:** Riddle, Logic, Math, Trivia
-- **Difficulty Levels:** Easy, Medium, Hard with visual indicators
-- **Statistics Tracking:** View attempts, solve rate, and popularity
-
-### Puzzle Solving (Vignesh)
-
-- **Browse Interface:** Filter by category and difficulty
-- **Answer Submission:** Instant feedback on correctness
-- **Solve Tracking:** Personal history of attempted puzzles
-- **Streak System:** Track consecutive days of solving
-- **Success Rate:** Calculate personal solving statistics
-
-### Community Features (Vignesh)
-
-- **Voting System:** Thumbs up/down on puzzle quality
-- **Comments:** Discuss solutions and provide hints
-- **Leaderboard:** Rankings for top solvers and creators
-- **Community Stats:** View overall platform engagement
-- **Popular Puzzles:** Discover trending challenges
-
-### User Interface
-
-- **Dark Mode:** Toggle between light and dark themes
-- **Responsive Design:** Mobile-first responsive layout
-- **Toast Notifications:** Real-time user feedback
-- **Loading States:** Clear indicators during async operations
-- **Sidebar Navigation:** Intuitive page navigation
-- **Modal Overlays:** Clean popup interfaces
-
-### Creative Features Highlighted
-
-- **Instagram-style Feed:** Scrollable puzzle cards with voting
-- **Instant Validation:** Real-time answer checking with feedback
-- **Streak Tracking:** Gamification through daily solve streaks
-- **Dynamic Statistics:** Real-time updates on puzzle performance
-- **Social Interaction:** Comments and voting for community engagement
 
 ## Database Collections
 
@@ -305,87 +290,30 @@ riddlit/
 MS Computer Science Student  
 Northeastern University, Boston, MA
 
-- **Email:** umasankar.g@northeastern.edu
-- **LinkedIn:** [ganesh-umasankar-87a3371b4](https://www.linkedin.com/in/ganesh-umasankar-87a3371b4/)
-- **GitHub:** [Ganesh-U](https://github.com/Ganesh-U)
+Email: umasankar.g@northeastern.edu
 
 **Vignesh Pakkam Saravanan**  
 MS Computer Science Student  
 Northeastern University, Boston, MA
 
-- **Email:** pakkamsaravanan.v@northeastern.edu
-- **LinkedIn:** [Add LinkedIn]
-- **GitHub:** [Add GitHub]
+Email: pakkamsaravanan.v@northeastern.edu
 
 ## Academic Reference
 
-**Course:** CS 5610 - Web Development  
+**Course:** CS5610 - Web Development  
 **Institution:** Northeastern University  
-**Semester:** Fall 2024  
-**Course Website:** [Professor's Course Page]
+**Semester:** Fall 2025  
+**Course Website:** [https://johnguerra.co/classes/webDevelopment_spring_2025/](https://johnguerra.co/classes/webDevelopment_spring_2025/)
 
 ## Documentation & Resources
 
 ### Project Documentation
 
-- **Design Document:** [Riddlit_Design_Document.pdf](Riddlit_Design_Document.pdf)
-- **Video Demo:** [Demo Video Link - Add YouTube link]
-- **Live Website:** [Deployment URL - Add Render/Railway link]
-- **Source Code:** [GitHub Repository](https://github.com/YOUR_USERNAME/riddlit)
-
-### Technical Resources
-
-- **API Documentation:** RESTful endpoints with Express routes
-- **Database Schema:** MongoDB collections with native driver
-- **ESLint Config:** Class-standard linting configuration
-- **Security:** Environment variables for secrets, session-based auth
-
-## Academic Compliance
-
-### Course Requirements Met
-
-- ✅ **Vanilla JavaScript:** ES6 modules with no React or frameworks
-- ✅ **Node + Express:** Backend server with proper routing
-- ✅ **MongoDB Native Driver:** No Mongoose usage
-- ✅ **No Template Engines:** Client-side rendering only
-- ✅ **Session Authentication:** Express-session implementation
-- ✅ **Multiple Collections:** 5 collections with full CRUD
-- ✅ **Modular Code:** ES6 modules organization
-- ✅ **ESLint:** Zero errors with proper configuration
-- ✅ **Prettier:** Consistent code formatting
-- ✅ **Deployment:** Public server hosting
-- ✅ **1000+ Records:** Seed data script provided
-- ✅ **Work Division:** Clear attribution in commits
-
-### Work Distribution
-
-#### Ganesh Umasankar
-
-- User authentication system (registration, login, session management)
-- User routes and authentication middleware
-- Puzzle creation and management (full CRUD operations)
-- Puzzle routes and database operations
-- Database schema design and connection setup
-- Server configuration with Express and middleware
-- Seed data generation script (1000+ records)
-- Login/register pages and authentication UI
-- My puzzles dashboard with edit/delete functionality
-
-#### Vignesh Pakkam Saravanan
-
-- Puzzle browsing and filtering interface
-- Answer submission and validation system
-- Submission routes and history tracking
-- Comments system (create, read, delete)
-- Comment routes and UI components
-- Voting functionality (likes/dislikes)
-- Vote routes and duplicate prevention
-- Leaderboard and user statistics display
-- Personal submission history page
-- Dark mode implementation with proper contrast
-- Toast notification system for user feedback
-- Helper utilities and UI components
-- Base CSS and design system variables
+- **Design Document:** [Design Documentation](Riddlit_Design_Document.pdf)
+- **Presentation:** [Slides](https://docs.google.com/presentation/d/1xPm9M039GLZMHk8mcZV7HL1qMxUPVnFYUQoDz7TnTl4/edit?usp=sharing)
+- **Video Demo:** [Web-app Walkthrough](https://drive.google.com/file/d/1G6D1KT1ejUvMnTHB7NIBtEe12HCBhH70/view?usp=sharing)
+- **Live Website:** [Live Site](https://riddlit-mc80.onrender.com)
+- **Source Code:** [GitHub Repository](https://github.com/Ganesh-U/riddlit)
 
 ## Use of Generative AI
 
@@ -393,9 +321,7 @@ Northeastern University, Boston, MA
 
 ### AI Tools Used
 
-- **Claude (Anthropic):** Version 4 Sonnet
-- **ChatGPT (OpenAI):** GPT-4
-- **GitHub Copilot:** Code completion and suggestions
+- **Claude:** Version 4 Sonnet
 
 ### Specific AI Assistance
 
