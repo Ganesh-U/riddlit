@@ -40,12 +40,12 @@ app.use(
       mongoUrl: process.env.MONGODB_URI,
       dbName: "riddlit",
       collectionName: "sessions",
-      touchAfter: 24 * 3600, // lazy session update (in seconds)
+      touchAfter: 24 * 3600,
     }),
     cookie: {
-      maxAge: 24 * 60 * 60 * 1000, // 24 hours
+      maxAge: 24 * 60 * 60 * 1000,
       httpOnly: true,
-      sameSite: "lax",
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
       secure: process.env.NODE_ENV === "production",
     },
   })
