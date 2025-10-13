@@ -1,0 +1,168 @@
+/* ========== Dark Mode Theme ========== */
+body.dark-mode {
+  --bg: #0f172a;
+  --card-bg: #1e293b;
+  --text: #f1f5f9;
+  --text-muted: #94a3b8;
+  --border: #334155;
+}
+
+/* ========== Global Overrides ========== */
+body.dark-mode .text-muted,
+body.dark-mode span.text-muted.small,
+body.dark-mode .small.text-muted,
+body.dark-mode .text-center.text-muted {
+  color: #94a3b8;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: var(--text);
+}
+
+/* ========== Navbar & Footer ========== */
+body.dark-mode .navbar,
+body.dark-mode .navbar-light,
+body.dark-mode .bg-white {
+  background: var(--card-bg);
+  border-bottom-color: var(--border);
+}
+
+body.dark-mode .user-info {
+  color: #94a3b8;
+}
+
+body.dark-mode .user-info strong,
+body.dark-mode .navbar strong,
+body.dark-mode #username-display {
+  color: #f1f5f9;
+}
+
+body.dark-mode .footer {
+  background: var(--card-bg);
+  border-top-color: var(--border);
+}
+
+body.dark-mode .border-bottom {
+  border-bottom-color: var(--border);
+}
+
+/* ========== Sidebars ========== */
+body.dark-mode .sidebar-left {
+  background: var(--card-bg);
+  border-right-color: var(--border);
+}
+
+body.dark-mode .sidebar-left .nav-link {
+  color: var(--text);
+}
+
+body.dark-mode .sidebar-left .nav-link:hover {
+  background: #334155;
+}
+
+body.dark-mode .sidebar-left .nav-link.active {
+  color: white;
+}
+
+body.dark-mode .sidebar-right {
+  background: var(--bg);
+}
+
+body.dark-mode .sidebar-right .card-title {
+  color: var(--text);
+}
+
+body.dark-mode .sidebar-right .sidebar-card {
+  background: var(--card-bg);
+  border-color: var(--border);
+}
+
+/* ========== Forms ========== */
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+  background: var(--card-bg);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+body.dark-mode .form-control:focus,
+body.dark-mode .form-select:focus {
+  background: var(--card-bg);
+  color: var(--text);
+}
+
+body.dark-mode .form-label,
+body.dark-mode .form-text {
+  color: var(--text-muted);
+}
+
+body.dark-mode .form-control::placeholder {
+  color: #94a3b8;
+}
+
+body.dark-mode .input-group-text {
+  background: var(--card-bg);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+/* ========== Cards & Modals ========== */
+body.dark-mode .card {
+  background: var(--card-bg);
+  border-color: var(--border);
+}
+
+body.dark-mode .card-title {
+  color: var(--text);
+}
+
+body.dark-mode .modal-content {
+  background: var(--card-bg);
+  color: var(--text);
+}
+
+body.dark-mode .modal-header {
+  border-bottom-color: var(--border);
+}
+
+body.dark-mode .modal-title,
+body.dark-mode .modal-body p {
+  color: var(--text);
+}
+
+body.dark-mode .modal-footer {
+  border-top-color: var(--border);
+}
+
+body.dark-mode .btn-close {
+  filter: invert(1);
+}
+
+/* ========== Content Elements ========== */
+body.dark-mode .view-title,
+body.dark-mode .puzzle-question,
+body.dark-mode .puzzle-author,
+body.dark-mode .leaderboard-username,
+body.dark-mode .comment-author,
+body.dark-mode .comment-text {
+  color: var(--text);
+}
+
+body.dark-mode .puzzle-stats,
+body.dark-mode .comment-time,
+body.dark-mode small.text-muted {
+  color: var(--text-muted);
+}
+
+body.dark-mode .puzzle-stats strong {
+  color: var(--text);
+}
+
+body.dark-mode .comment-item {
+  border-bottom-color: var(--border);
+}
