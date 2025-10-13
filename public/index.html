@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Riddlit - A community-driven platform for creating and solving brain teasers, puzzles, and riddles"
+    />
+    <meta name="author" content="Ganesh Umasankar & Vignesh Pakkam Saravanan" />
+    <meta
+      name="keywords"
+      content="puzzles, riddles, brain teasers, logic problems, trivia, community"
+    />
+    <title>Riddlit - Daily Puzzle Challenge</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
+
+    <!-- Custom CSS - Modular -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/puzzle-card.css" />
+    <link rel="stylesheet" href="css/sidebar.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+    <link rel="stylesheet" href="css/dark-mode.css" />
+  </head>
+  <body>
+    <!-- Top Navbar -->
+    <nav class="navbar border-bottom">
+      <div class="container-fluid px-4">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img src="favicon.svg" alt="Riddlit Logo" class="brand-icon-svg" />
+          <span class="brand-text">Riddlit</span>
+        </a>
+        <div class="d-flex align-items-center gap-3">
+          <button
+            id="dark-mode-toggle"
+            class="btn btn-link text-decoration-none p-0"
+            title="Toggle Dark Mode"
+            aria-label="Toggle Dark Mode"
+          >
+            <i class="bi bi-moon-fill fs-5"></i>
+          </button>
+          <span class="user-info small d-none d-md-inline">
+            Welcome, <strong id="username-display">Guest</strong>
+          </span>
+          <button id="logout-btn" class="btn btn-outline-danger btn-sm d-none">
+            <i class="bi bi-box-arrow-right"></i> Logout
+          </button>
+          <a href="login.html" id="login-link" class="btn btn-outline-primary btn-sm">
+            <i class="bi bi-box-arrow-in-right"></i> Login
+          </a>
+          <a href="register.html" id="register-link" class="btn btn-primary btn-sm">
+            <i class="bi bi-person-plus"></i> Register
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Layout - 3 Columns -->
+    <div class="app-layout">
+      <!-- Left Sidebar - Navigation -->
+      <aside class="sidebar-left">
+        <nav aria-label="Main navigation">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html" aria-current="page">
+                <i class="bi bi-house-door-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+
+            <li class="nav-divider">CATEGORIES</li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="index.html?category=Riddle">
+                <i class="bi bi-puzzle-fill"></i>
+                <span>Riddles</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html?category=Logic">
+                <i class="bi bi-lightbulb-fill"></i>
+                <span>Logic</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html?category=Math">
+                <i class="bi bi-calculator-fill"></i>
+                <span>Math</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html?category=Trivia">
+                <i class="bi bi-question-circle-fill"></i>
+                <span>Trivia</span>
+              </a>
+            </li>
+
+            <li class="nav-divider">MY ACTIVITY</li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="my-stats.html">
+                <i class="bi bi-bar-chart-fill"></i>
+                <span>My Stats</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="leaderboard.html">
+                <i class="bi bi-trophy-fill"></i>
+                <span>Leaderboard</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="my-puzzles.html">
+                <i class="bi bi-journal-text"></i>
+                <span>My Puzzles</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Center Content -->
+      <main class="main-content">
+        <h2 class="view-title mb-4">
+          <i class="bi bi-grid-3x3-gap-fill text-primary"></i>
+          Puzzle Feed
+        </h2>
+        <div id="puzzle-feed">
+          <div class="text-center py-5">
+            <div class="spinner-border text-primary loading-spinner" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="text-muted mt-3 loading-text">Loading puzzles...</p>
+          </div>
+        </div>
+      </main>
+
+      <!-- Right Sidebar -->
+      <aside class="sidebar-right">
+        <!-- Create Puzzle Card -->
+        <div class="card sidebar-card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">
+              <i class="bi bi-plus-circle"></i>
+              Create Puzzle
+            </h5>
+            <p class="sidebar-description small mb-3">Share your brain teaser with the community</p>
+            <button
+              class="btn btn-primary w-100"
+              data-bs-toggle="modal"
+              data-bs-target="#createPuzzleModal"
+            >
+              <i class="bi bi-plus-circle"></i> Create New Puzzle
+            </button>
+          </div>
+        </div>
+
+        <!-- Filters Card -->
+        <div class="card sidebar-card">
+          <div class="card-body">
+            <h5 class="card-title">
+              <i class="bi bi-funnel"></i>
+              Filters
+            </h5>
+
+            <div class="mb-4">
+              <label class="form-label filter-label small mb-2">DIFFICULTY</label>
+              <div class="d-grid gap-2">
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary difficulty-btn active"
+                  data-difficulty=""
+                >
+                  All Difficulties
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline-success difficulty-btn"
+                  data-difficulty="Easy"
+                >
+                  <i class="bi bi-circle-fill difficulty-icon-easy"></i> Easy
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline-warning difficulty-btn"
+                  data-difficulty="Medium"
+                >
+                  <i class="bi bi-dash-circle-fill difficulty-icon-medium"></i> Medium
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline-danger difficulty-btn"
+                  data-difficulty="Hard"
+                >
+                  <i class="bi bi-x-circle-fill difficulty-icon-hard"></i> Hard
+                </button>
+              </div>
+            </div>
+
+            <div>
+              <label for="sort-puzzles" class="form-label filter-label small mb-2">SORT BY</label>
+              <select class="form-select" id="sort-puzzles">
+                <option value="newest">Newest First</option>
+                <option value="oldest">Oldest First</option>
+                <option value="most-solved">Most Solved</option>
+                <option value="least-solved">Least Solved</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p class="mb-0">
+        Made with <span class="heart">❤️</span> by <strong>Ganesh Umasankar</strong> &
+        <strong>Vignesh Pakkam Saravanan</strong>
+      </p>
+    </footer>
+
+    <!-- Create Puzzle Modal -->
+    <div
+      class="modal fade"
+      id="createPuzzleModal"
+      tabindex="-1"
+      aria-labelledby="createPuzzleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="createPuzzleModalLabel">
+              <i class="bi bi-plus-circle text-primary"></i>
+              Create New Puzzle
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="create-puzzle-form">
+              <div class="mb-3">
+                <label for="puzzle-question" class="form-label fw-semibold">Question</label>
+                <textarea
+                  class="form-control"
+                  id="puzzle-question"
+                  rows="4"
+                  required
+                  placeholder="Enter your puzzle question..."
+                ></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label for="puzzle-answer" class="form-label fw-semibold">Answer</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="puzzle-answer"
+                  required
+                  placeholder="Enter the correct answer..."
+                />
+                <div class="form-text">
+                  <i class="bi bi-info-circle"></i>
+                  Answer will be case-insensitive
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="puzzle-hint" class="form-label fw-semibold">
+                  Hint <span class="text-muted fw-normal">(Optional)</span>
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="puzzle-hint"
+                  placeholder="Provide a helpful hint..."
+                />
+                <div class="form-text">
+                  <i class="bi bi-lightbulb"></i>
+                  Optional: Give solvers a hint if they get stuck
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="puzzle-category" class="form-label fw-semibold">Category</label>
+                  <select class="form-select" id="puzzle-category" required>
+                    <option value="Riddle">🧩 Riddle</option>
+                    <option value="Logic">💡 Logic</option>
+                    <option value="Math">➗ Math</option>
+                    <option value="Trivia">📚 Trivia</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="puzzle-difficulty" class="form-label fw-semibold">Difficulty</label>
+                  <select class="form-select" id="puzzle-difficulty" required>
+                    <option value="Easy">Easy</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Hard</option>
+                  </select>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary w-100">
+                <i class="bi bi-check-circle"></i> Create Puzzle
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comments Modal -->
+    <div
+      class="modal fade"
+      id="commentsModal"
+      tabindex="-1"
+      aria-labelledby="commentsModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="commentsModalLabel">
+              <i class="bi bi-chat-dots-fill text-primary"></i>
+              Comments
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div id="comments-list" class="mb-4"></div>
+
+            <form id="add-comment-form">
+              <div class="input-group">
+                <textarea
+                  class="form-control"
+                  id="comment-text"
+                  rows="2"
+                  placeholder="Add a comment..."
+                  required
+                ></textarea>
+                <button class="btn btn-primary" type="submit" aria-label="Send comment">
+                  <i class="bi bi-send-fill"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container toast-container-bottom-right">
+      <div
+        id="toast"
+        class="toast align-items-center border-0"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="d-flex">
+          <div class="toast-body"></div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script type="module" src="js/pages/index.js"></script>
+  </body>
+</html>
