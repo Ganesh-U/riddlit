@@ -1,0 +1,124 @@
+.puzzle-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 24px;
+  transition: all 0.3s;
+  animation: fadeInUp 0.4s;
+  position: relative;
+}
+
+.puzzle-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.puzzle-card.puzzle-solved {
+  border-left: 4px solid #10b981;
+  background: linear-gradient(to right, rgba(16, 185, 129, 0.05), var(--card-bg));
+}
+
+.puzzle-card.puzzle-solved::before {
+  content: "✓ Solved";
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #10b981;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.puzzle-card.puzzle-attempted {
+  border-left: 4px solid #f59e0b;
+  background: linear-gradient(to right, rgba(245, 158, 11, 0.05), var(--card-bg));
+}
+
+.puzzle-card.puzzle-attempted::before {
+  content: "⟳ Attempted";
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #f59e0b;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.user-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-start), var(--primary-end));
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  margin-right: 12px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.puzzle-author {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text);
+}
+
+.puzzle-question {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.8;
+  margin: 24px 0;
+}
+
+.puzzle-stats {
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+.answer-input {
+  font-size: 18px;
+}
+
+.submit-btn {
+  white-space: nowrap;
+}
+
+.hint-btn {
+  font-size: 14px;
+  padding: 8px 16px;
+}
+
+.hint-container {
+  margin-top: 12px;
+}
+
+.feedback-container {
+  margin-top: 12px;
+}
+
+/* ========== Responsive Puzzle Cards ========== */
+@media (max-width: 992px) {
+  .puzzle-card {
+    padding: 24px;
+  }
+
+  .puzzle-question {
+    font-size: 20px;
+  }
+
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
