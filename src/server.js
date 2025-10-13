@@ -19,7 +19,6 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware - CORS
-// Allow all origins since frontend and backend are on same domain
 app.use(
   cors({
     origin: true,
@@ -71,10 +70,9 @@ connectDB()
 
     // Start server
     app.listen(PORT, () => {
-      console.log(`🚀 Server running on http://localhost:${PORT}`);
+      console.log(`🚀 Server running on port ${PORT}`);
       console.log(`📊 Database: ${db.databaseName}`);
       console.log(`🌍 Environment: ${process.env.NODE_ENV || "development"}`);
-      console.log(`🔗 Open: http://localhost:${PORT}`);
     });
   })
   .catch((error) => {
