@@ -1,0 +1,84 @@
+.app-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr 320px;
+  height: calc(100vh - var(--navbar-height) - var(--footer-height));
+  margin-top: var(--navbar-height);
+}
+
+body:has(.sidebar-right:empty) .app-layout,
+.app-layout.two-column {
+  grid-template-columns: 240px 1fr;
+}
+
+/* ========== Main Content Area ========== */
+.main-content {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 32px 40px 60px 40px;
+}
+
+.view-title {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.view-content {
+  display: none;
+}
+
+.view-content.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+/* ========== Empty State ========== */
+.empty-state {
+  text-align: center;
+  padding: 100px 40px;
+}
+
+.empty-state-icon {
+  font-size: 96px;
+  opacity: 0.4;
+  margin-bottom: 24px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.empty-state h3 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.empty-state p {
+  font-size: 18px;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 992px) {
+  .app-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar-left,
+  .sidebar-right {
+    display: none;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+}
