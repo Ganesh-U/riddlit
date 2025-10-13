@@ -1,0 +1,26 @@
+.modal-content {
+  background: var(--card-bg);
+  color: var(--text);
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--border);
+  padding: 24px;
+}
+
+.modal-body {
+  padding: 28px;
+}
+
+.modal-title {
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--text);
+}
+
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
