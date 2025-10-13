@@ -1,0 +1,45 @@
+{
+  "name": "riddlit",
+  "version": "1.0.0",
+  "description": "A community-driven brain teaser platform where users create and solve puzzles",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "seed": "node scripts/seed-data.js",
+    "lint": "eslint src/ public/js/",
+    "lint:fix": "eslint src/ public/js/ --fix",
+    "format": "prettier --write \"**/*.{js,css,html,md}\"",
+    "format:check": "prettier --check \"**/*.{js,css,html,md}\""
+  },
+  "keywords": [
+    "puzzles",
+    "riddles",
+    "brain-teasers",
+    "community",
+    "education"
+  ],
+  "authors": [
+    "Ganesh Umasankar",
+    "Vignesh Pakkam Saravanan"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "mongodb": "^6.20.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.37.0",
+    "eslint": "^9.37.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-jest": "^29.0.1",
+    "eslint-plugin-prettier": "^5.5.4",
+    "globals": "^16.4.0",
+    "jest": "^30.2.0",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2"
+  }
+}
