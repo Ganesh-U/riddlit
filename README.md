@@ -25,7 +25,7 @@ Email: pakkamsaravanan.v@northeastern.edu
 **Course:** CS5610 - Web Development  
 **Institution:** Northeastern University  
 **Semester:** Fall 2025  
-**Course Website:** [https://johnguerra.co/classes/webDevelopment_spring_2025/](https://johnguerra.co/classes/webDevelopment_spring_2025/)
+**Course Website:** [https://johnguerra.co/classes/webDevelopment_online_fall_2025/](https://johnguerra.co/classes/webDevelopment_online_fall_2025/)
 
 ## Documentation & Resources
 
