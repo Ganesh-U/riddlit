@@ -6,6 +6,37 @@ A community-driven puzzle platform where users create and solve brain teasers, r
 
 This project demonstrates full-stack web development skills through a complete CRUD application. It showcases user authentication, database design with multiple collections, RESTful API development, client-side rendering, and complex user interaction patterns. The platform encourages daily engagement through solve streak tracking and provides creators with detailed analytics on puzzle performance.
 
+## Authors
+
+**Ganesh Umasankar**  
+MS Computer Science Student  
+Northeastern University, Boston, MA
+
+Email: umasankar.g@northeastern.edu
+
+**Vignesh Pakkam Saravanan**  
+MS Computer Science Student  
+Northeastern University, Boston, MA
+
+Email: pakkamsaravanan.v@northeastern.edu
+
+## Academic Reference
+
+**Course:** CS5610 - Web Development  
+**Institution:** Northeastern University  
+**Semester:** Fall 2025  
+**Course Website:** [https://johnguerra.co/classes/webDevelopment_spring_2025/](https://johnguerra.co/classes/webDevelopment_spring_2025/)
+
+## Documentation & Resources
+
+### Project Documentation
+
+- **Design Document:** [Design Documentation](Riddlit_Design-Document.pdf)
+- **Presentation:** [Slides](https://docs.google.com/presentation/d/1xPm9M039GLZMHk8mcZV7HL1qMxUPVnFYUQoDz7TnTl4/edit?usp=sharing)
+- **Video Demo:** [Web-app Walkthrough](https://drive.google.com/file/d/1G6D1KT1ejUvMnTHB7NIBtEe12HCBhH70/view?usp=sharing)
+- **Live Website:** [Live Site](https://riddlit-mc80.onrender.com)
+- **Source Code:** [GitHub Repository](https://github.com/Ganesh-U/riddlit)
+
 ## Screenshots
 
 ### Landing page
@@ -212,37 +243,6 @@ riddlit/
 ├── Riddlit_Design_Document.pdf # Design documentation
 └── README.md                  # This file
 ```
-
-## Authors
-
-**Ganesh Umasankar**  
-MS Computer Science Student  
-Northeastern University, Boston, MA
-
-Email: umasankar.g@northeastern.edu
-
-**Vignesh Pakkam Saravanan**  
-MS Computer Science Student  
-Northeastern University, Boston, MA
-
-Email: pakkamsaravanan.v@northeastern.edu
-
-## Academic Reference
-
-**Course:** CS5610 - Web Development  
-**Institution:** Northeastern University  
-**Semester:** Fall 2025  
-**Course Website:** [https://johnguerra.co/classes/webDevelopment_spring_2025/](https://johnguerra.co/classes/webDevelopment_spring_2025/)
-
-## Documentation & Resources
-
-### Project Documentation
-
-- **Design Document:** [Design Documentation](Riddlit_Design-Document.pdf)
-- **Presentation:** [Slides](https://docs.google.com/presentation/d/1xPm9M039GLZMHk8mcZV7HL1qMxUPVnFYUQoDz7TnTl4/edit?usp=sharing)
-- **Video Demo:** [Web-app Walkthrough](https://drive.google.com/file/d/1G6D1KT1ejUvMnTHB7NIBtEe12HCBhH70/view?usp=sharing)
-- **Live Website:** [Live Site](https://riddlit-mc80.onrender.com)
-- **Source Code:** [GitHub Repository](https://github.com/Ganesh-U/riddlit)
 
 ## Use of Generative AI
 
