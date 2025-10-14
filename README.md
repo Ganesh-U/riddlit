@@ -349,6 +349,13 @@ Email: pakkamsaravanan.v@northeastern.edu
 - Integration of all components into cohesive application
 - Testing and debugging of complete system
 
+## Future Enhancements
+
+- Content moderation and reporting system for inappropriate content/comments
+- Password hashing (bcrypt) and OAuth integration for enhanced security
+- Image-based puzzles and visual riddles
+- Time-limited speed challenges with bonus scoring
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
