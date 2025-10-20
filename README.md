@@ -61,7 +61,7 @@ _Puzzle feed after logging in_
 
 ### Filtering puzzles
 
-![Filter puzzles](screenshots/Filter_puzzles.png)
+![Filter puzzles](public/images/Filter_puzzles.png)
 _Filter puzzles by category and/or difficulty_
 
 ### Solving puzzle correctly
