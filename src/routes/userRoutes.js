@@ -21,7 +21,7 @@ export function setupUserRoutes(db) {
       if (existing) {
         return res.status(400).json({ error: "Username already taken" });
       }
-
+// Password should be hashed to maximize security
       await db.collection("users").insertOne({
         username,
         password,
