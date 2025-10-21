@@ -1,3 +1,4 @@
+# Good job on ignoring the .env file so your secret won't be exposed! Additionally, I think adding a .env.example file that lists some placeholder values so that people can see what environment variables are required for your project would be nice too.
 node_modules/
 .env
 .DS_Store
