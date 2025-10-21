@@ -1,3 +1,5 @@
+// Consider moving all your database logic from the routes folder to a different "repositories" folder 
+// It is best if HTTP logic (requests/responses) is not mixed in with data logic (CRUD operations)
 import express from "express";
 import { ObjectId } from "mongodb";
 import { requireLogin } from "../middleware/auth.js";
